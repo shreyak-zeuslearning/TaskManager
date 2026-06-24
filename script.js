@@ -1,13 +1,14 @@
 let tasks = JSON.parse(localStorage.getItem("tasks")) || []; //text to json conversion
 displayTask();
+  let draggedIndex=null; 
+
 
 //function to add task
 function addTask() {
   let input = document.getElementById("taskInput");
 
   let task = input.value.trim();
-  let tasks= JSON.parse(localStorage.getItem('tasks')) || [];
-  let draggedIndec=null; 
+
 
   if (task === "") {
     alert("Please enter a task");
@@ -33,14 +34,18 @@ function displayTask() {
 
   list.innerHTML = "";
   for (let i = 0; i < tasks.length; i++) {
+  
+    let li=document.createElement("li");
+    li.className="task-item";
+    li.draggable=true;
 
-    
-    let checked = "";
-    if (tasks[i].completed) {
-      checked = "checked";
-    }
-    list.innerHTML += `<li class="task-item"> 
-            
+    // let checked = "";
+    // if (tasks[i].completed) {
+    //   checked = "checked";
+    // }
+    // list.innerHTML += `<li class="task-item"> 
+
+    li.innerHTML=`            
             <input 
           
                 type = "checkbox"
@@ -58,6 +63,35 @@ function displayTask() {
                  Delete task 
                  </button>
                  </li>`;
+
+      
+    li.addEventListener("dragstart",()=>{
+      draggedIndex=i;
+    });
+
+    li.addEventListener("dragover",(e)=>{
+      e.preventDefault();
+    });
+
+    li.addEventListener("drop",()=>{
+      if(draggedIndex===i){
+        return;
+      }
+
+    const draggedTask = tasks.splice(draggedIndex,1)[0];
+
+    tasks.splice(i,0,draggedTask);
+
+    saveTask();
+    displayTask();
+  });
+
+  li.addEventListener("dragend",()=>{
+    draggedIndex=null;
+  });
+
+  list.appendChild(li);
+
   }
 }
 

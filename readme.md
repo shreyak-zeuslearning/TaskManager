@@ -10,6 +10,8 @@ Data stored in Local browser storage
 - View task list
 - Mark task as completed
 - Delete task
+- Reorder tasks using drag and drop 
+- Preserve the updated task order after page refresh using local storage 
 ## How to Run
 Open the index.html file directly in the browser 
 To view the data 
@@ -26,3 +28,15 @@ To view the data
 2. Progress tracking 
 3. Would use frameworks like react or next js to improve the frontend 
 4. Use database like mongo db 
+
+
+## Additional feature 
+
+### Drag and Drop Reordering
+The application now supports drag-and-drop functionality for reordering tasks.
+
+Changes made 
+* Added drag and drop support for task items
+* Updated task order immediately in real time after dropping a task.
+* Saved the reordered task list to Local Storage. 
+* Restored the saved task order automatically after refreshing the page.

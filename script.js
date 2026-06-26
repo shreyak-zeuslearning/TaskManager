@@ -1,7 +1,6 @@
 let tasks = JSON.parse(localStorage.getItem("tasks")) || []; //text to json conversion
 displayTask();
-  let draggedIndex=null; 
-
+let draggedIndex = null;
 
 //function to add task
 function addTask() {
@@ -9,14 +8,13 @@ function addTask() {
 
   let task = input.value.trim();
 
-
   if (task === "") {
     alert("Please enter a task");
     return;
   }
 
   tasks.push({
-    id:Date.now(),
+    id: Date.now(),
     text: task,
     completed: false,
   });
@@ -34,18 +32,11 @@ function displayTask() {
 
   list.innerHTML = "";
   for (let i = 0; i < tasks.length; i++) {
-  
-    let li=document.createElement("li");
-    li.className="task-item";
-    li.draggable=true;
+    let li = document.createElement("li");
+    li.className = "task-item";
+    li.draggable = true;
 
-    // let checked = "";
-    // if (tasks[i].completed) {
-    //   checked = "checked";
-    // }
-    // list.innerHTML += `<li class="task-item"> 
-
-    li.innerHTML=`            
+    li.innerHTML = `            
             <input 
           
                 type = "checkbox"
@@ -64,34 +55,32 @@ function displayTask() {
                  </button>
                  </li>`;
 
-      
-    li.addEventListener("dragstart",()=>{
-      draggedIndex=i;
+    li.addEventListener("dragstart", () => {
+      draggedIndex = i;
     });
 
-    li.addEventListener("dragover",(e)=>{
+    li.addEventListener("dragover", (e) => {
       e.preventDefault();
     });
 
-    li.addEventListener("drop",()=>{
-      if(draggedIndex===i){
+    li.addEventListener("drop", () => {
+      if (draggedIndex === i) {
         return;
       }
 
-    const draggedTask = tasks.splice(draggedIndex,1)[0];
+      const draggedTask = tasks.splice(draggedIndex, 1)[0];
 
-    tasks.splice(i,0,draggedTask);
+      tasks.splice(i, 0, draggedTask);
 
-    saveTask();
-    displayTask();
-  });
+      saveTask();
+      displayTask();
+    });
 
-  li.addEventListener("dragend",()=>{
-    draggedIndex=null;
-  });
+    li.addEventListener("dragend", () => {
+      draggedIndex = null;
+    });
 
-  list.appendChild(li);
-
+    list.appendChild(li);
   }
 }
 

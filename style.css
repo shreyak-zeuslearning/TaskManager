@@ -1,75 +1,71 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    background-color: antiquewhite;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  background-color: antiquewhite;
 }
 
-h1{
-    color:rgb(42, 5, 5)
+h1 {
+  color: rgb(42, 5, 5);
 }
 
-#taskInput{
-    width: 250px;
-    padding: 10px;
-    border-radius: 5px;
-    border:1px solid gray;
+#taskInput {
+  width: 250px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid gray;
 }
 
 button {
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-ul{
-    list-style: none;
-    padding:0;
+ul {
+  list-style: none;
+  padding: 0;
 }
 
-.task-item{
-    display: flex;
-    align-items: center;
-    /* justify-content: flex-start; */
-    width: 450px;
-    margin:10px auto;
-    padding:10px;
-    background:white;
-    border:1px solid lightgray;
-    border-radius: 8px;
-    /* text-align:left; */
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    cursor: move;
-    
+.task-item {
+  display: flex;
+  align-items: center;
+  /* justify-content: flex-start; */
+  width: 450px;
+  margin: 10px auto;
+  padding: 10px;
+  background: white;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  /* text-align:left; */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  cursor: move;
 }
 
-.delete-btn{
-    background-color: red;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    min-width: 100px;
-    margin-left: auto;
+.delete-btn {
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  min-width: 100px;
+  margin-left: auto;
 }
 
-.task-text{
-
-    font-size: 18px;
-    justify-content: flex-start;
-    display: flex;
-    margin-left: 10px;
+.task-text {
+  font-size: 18px;
+  justify-content: flex-start;
+  display: flex;
+  margin-left: 10px;
 }
 
-.add-btn{
-    color: white;
-    background-color: rgb(77, 174, 77);
+.add-btn {
+  color: white;
+  background-color: rgb(77, 174, 77);
 }
 
-
-
-#taskList{
-    padding: 0;
-    margin: 0;
-    list-style: none;
+#taskList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }

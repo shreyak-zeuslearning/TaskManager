@@ -34,10 +34,11 @@ function displayTask() {
   for (let i = 0; i < tasks.length; i++) {
     let li = document.createElement("li");
     li.className = "task-item";
+    li.id="taskItem"
     li.draggable = true;
 
     li.innerHTML = `            
-            <input 
+            <input  id="checkbox"
           
                 type = "checkbox"
                 ${tasks[i].completed ? "checked" : ""} 
@@ -50,7 +51,7 @@ function displayTask() {
                 </span>
 
             <button onClick="deleteTask(${i})" 
-            class="delete-btn">
+            class="delete-btn" id="deleteButton">
                  Delete task 
                  </button>
                  </li>`;

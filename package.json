@@ -1,0 +1,24 @@
+{
+  "name": "taskmanager",
+  "version": "1.0.0",
+  "description": "A task manager application with options to add , delete and mark as complete options . Also has drag and drop funcitonality for reordering.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shreyak-zeuslearning/TaskManager.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/shreyak-zeuslearning/TaskManager/issues"
+  },
+  "homepage": "https://github.com/shreyak-zeuslearning/TaskManager#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1"
+  }
+}
